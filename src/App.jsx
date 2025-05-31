@@ -1,34 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { SocialMediaComponents } from './data.js'
 
-function App() {
-  const [count, setCount] = useState(0)
+const headerDescriptions = [
+  'mim!',
+  'minha história!',
+  'minhas habilidades!',
+  'meus estudos!',
+]
+
+function genRandomInt(max) {
+  return Math.floor(Math.random() * (max + 1))
+}
+
+function Header() {
+  const headerDescription = headerDescriptions[genRandomInt(3)]
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <header>
+      <h1>Meu Blog</h1>
+      <p>Um pouco sobre {headerDescription}</p>
+    </header>
+  )
+}
+
+function SocialMedia({ image, title, description }) {
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </li>
+  )
+}
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <section id="social-media">
+          <h2>Minhas redes sociais e contatos</h2>
+          <ul>
+            <SocialMedia
+              image={SocialMediaComponents[0].image}
+              title={SocialMediaComponents[0].title}
+              description={SocialMediaComponents[0].description}
+            />
+            <SocialMedia {...SocialMediaComponents[1]} />
+            <SocialMedia {...SocialMediaComponents[2]} />
+            <SocialMedia {...SocialMediaComponents[3]} />
+          </ul>
+        </section>
+      </main>
+    </div>
   )
 }
 
