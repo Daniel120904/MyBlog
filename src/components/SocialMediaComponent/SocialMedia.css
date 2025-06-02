@@ -1,0 +1,43 @@
+#social-media {
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: #140524;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+#social-media ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#social-media li {
+  flex: 1;
+  text-align: center;
+}
+
+#social-media li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#social-media li img {
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+#social-media li h3 {
+  margin: 0.5rem 0;
+}
+
+#social-media li p {
+  font-size: 0.9rem;
+  white-space: pre-line;
+  text-align: center;
+}

@@ -7,21 +7,44 @@ export const SocialMediaComponents = [
   {
     image: linkedinImg,
     title: 'Linkedin',
-    description: 'Perfil no Linkedin:\nlinkedin.com/in/daniel-adriano-02b66732b',
+    description: 'Daniel Adriano',
+    link: 'https://linkedin.com/in/daniel-adriano-02b66732b',
   },
   {
     image: gitHubImg,
     title: 'GitHub',
-    description: 'Perfil no GitHub:\nDaniel120904',
+    description: 'Daniel120904',
+    link: 'https://github.com/Daniel120904',
   },
   {
     image: whatsAppImg,
     title: 'Telefone',
-    description: 'Número de telefone:\n11 91401-2544',
+    description: '(11) 91401-2544',
+    link: '',
   },
   {
     image: emailImg,
     title: 'E-mail',
-    description: 'Meu E-mail privado:\ndanieladriano1209@gmail.com',
+    description: 'danieladriano1209@gmail.com',
+    link: '',
   },
 ]
+
+export const AboutMyComponents = {
+  faculdade: {
+    title: 'faculdade',
+    description: 'Fatec Mogi das Cruzes.',
+  },
+  cursos: {
+    title: 'cursos',
+    description: 'Muitos.',
+  },
+  projetos: {
+    title: 'projetos',
+    description: 'Alguns.',
+  },
+  experiencias: {
+    title: 'experiencias',
+    description: 'Prourando.',
+  },
+}

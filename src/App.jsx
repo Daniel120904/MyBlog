@@ -1,57 +1,77 @@
+import { useState } from 'react'
+
 import { SocialMediaComponents } from './data.js'
-
-const headerDescriptions = [
-  'mim!',
-  'minha história!',
-  'minhas habilidades!',
-  'meus estudos!',
-]
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1))
-}
-
-function Header() {
-  const headerDescription = headerDescriptions[genRandomInt(3)]
-
-  return (
-    <header>
-      <h1>Meu Blog</h1>
-      <p>Um pouco sobre {headerDescription}</p>
-    </header>
-  )
-}
-
-function SocialMedia({ image, title, description }) {
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
-  )
-}
+import { AboutMyComponents } from './data.js'
+import Header from './components/HeaderComponent/Header.jsx'
+import SocialMedia from './components/SocialMediaComponent/SocialMedia.jsx'
+import TabButton from './components/AboutMyComponent/TabButton.jsx'
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState()
+
+  function handleSelect(selectedButton) {
+    setSelectedTopic(selectedButton)
+  }
+
+  let tabContent = (
+    <div id="tab-content">
+      <p>Escolha algum tópico sobre mim</p>
+    </div>
+  )
+
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{AboutMyComponents[selectedTopic].title}</h3>
+        <p>{AboutMyComponents[selectedTopic].description}</p>
+      </div>
+    )
+  }
+
   return (
-    <div>
+    <>
       <Header />
       <main>
         <section id="social-media">
           <h2>Minhas redes sociais e contatos</h2>
           <ul>
-            <SocialMedia
-              image={SocialMediaComponents[0].image}
-              title={SocialMediaComponents[0].title}
-              description={SocialMediaComponents[0].description}
-            />
-            <SocialMedia {...SocialMediaComponents[1]} />
-            <SocialMedia {...SocialMediaComponents[2]} />
-            <SocialMedia {...SocialMediaComponents[3]} />
+            {SocialMediaComponents.map((socialMediaItem) => (
+              <SocialMedia key={socialMediaItem.title} {...socialMediaItem} />
+            ))}
           </ul>
         </section>
+        <section id="aboutMy">
+          <h2>Sobre mim</h2>
+          <menu>
+            <TabButton
+              isSelected={selectedTopic === 'faculdade'}
+              onSelect={() => handleSelect('faculdade')}
+            >
+              Facudade
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === 'cursos'}
+              onSelect={() => handleSelect('cursos')}
+            >
+              Cursos
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === 'projetos'}
+              onSelect={() => handleSelect('projetos')}
+            >
+              Progetos
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === 'experiencias'}
+              onSelect={() => handleSelect('experiencias')}
+            >
+              Experiências
+            </TabButton>
+          </menu>
+          {tabContent}
+        </section>
       </main>
-    </div>
+    </>
   )
 }
 
