@@ -1,7 +1,7 @@
-import linkedinImg from './assets/logoLinkedin.png'
-import gitHubImg from './assets/logoGitHub.png'
-import whatsAppImg from './assets/logoWhatsApp.png'
-import emailImg from './assets/logoEmail.png'
+import linkedinImg from '../../assets/logoLinkedin.png'
+import gitHubImg from '../../assets/logoGitHub.png'
+import whatsAppImg from '../../assets/logoWhatsApp.png'
+import emailImg from '../../assets/logoEmail.png'
 
 export const SocialMediaComponents = [
   {
@@ -29,22 +29,3 @@ export const SocialMediaComponents = [
     link: '',
   },
 ]
-
-export const AboutMyComponents = {
-  faculdade: {
-    title: 'faculdade',
-    description: 'Fatec Mogi das Cruzes.',
-  },
-  cursos: {
-    title: 'cursos',
-    description: 'Muitos.',
-  },
-  projetos: {
-    title: 'projetos',
-    description: 'Alguns.',
-  },
-  experiencias: {
-    title: 'experiencias',
-    description: 'Prourando.',
-  },
-}

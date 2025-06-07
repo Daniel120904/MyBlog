@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header>
-      <h1>Meu Portfolio</h1>
+      <h1>Meu Portfólio</h1>
       <p>Um pouco sobre {headerDescription}</p>
     </header>
   )
