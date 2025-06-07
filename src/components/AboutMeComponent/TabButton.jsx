@@ -1,4 +1,4 @@
-import './AboutMy.css'
+import './AboutMe.css'
 
 export default function TabButton({ children, isSelected, ...props }) {
   return (

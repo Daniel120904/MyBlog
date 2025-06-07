@@ -1,12 +1,12 @@
-#aboutMy {
+#aboutMe {
   margin: 3rem auto;
 }
 
-#aboutMy h2 {
+#aboutMe h2 {
   text-align: left;
 }
 
-#aboutMy menu {
+#aboutMe menu {
   margin: 1rem 0;
   padding: 0;
   display: flex;
@@ -14,7 +14,7 @@
   list-style: none;
 }
 
-#aboutMy menu button {
+#aboutMe menu button {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
@@ -26,12 +26,12 @@
   transition: all 0.2s ease-in-out;
 }
 
-#aboutMy menu button:hover {
+#aboutMe menu button:hover {
   background-color: #1b082f;
   color: #ebe7ef;
 }
 
-#aboutMy menu button.active {
+#aboutMe menu button.active {
   background-color: #7925d3;
   color: #ebe7ef;
 }
@@ -45,8 +45,4 @@
 
 #tab-content h3 {
   margin: 0;
-}
-
-#tab-content code {
-  font-size: 1rem;
 }

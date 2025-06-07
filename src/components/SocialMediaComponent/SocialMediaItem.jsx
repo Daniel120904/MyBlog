@@ -1,16 +1,15 @@
-import SocialMedia from "./SocialMedia"
-import { SocialMediaComponents } from "./SocialMediaData"
-
+import Section from '../Section/Section'
+import SocialMedia from './SocialMedia'
+import { SocialMediaComponents } from './SocialMediaData'
 
 export default function socialMediaItem() {
   return (
-    <section id="social-media">
-      <h2>Minhas redes sociais e contatos</h2>
+    <Section title="Minhas redes sociais e contatos" id="socialMedia">
       <ul>
         {SocialMediaComponents.map((socialMediaItem) => (
           <SocialMedia key={socialMediaItem.title} {...socialMediaItem} />
         ))}
       </ul>
-    </section>
+    </Section>
   )
 }

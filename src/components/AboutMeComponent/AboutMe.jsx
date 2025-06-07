@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-import { AboutMyComponents } from './AboutMyData'
+import { AboutMeComponents } from './AboutMeData'
 import TabButton from './TabButton'
-import Section from '../Section'
+import Section from '../Section/Section'
 import Tabs from './Tabs'
-import './AboutMy.css'
+import './AboutMe.css'
 
-export default function AboutMy() {
+export default function AboutMe() {
   const [selectedTopic, setSelectedTopic] = useState()
 
   function handleSelect(topic) {
@@ -22,14 +22,14 @@ export default function AboutMy() {
   if (selectedTopic) {
     tabContent = (
       <div id="tab-content">
-        <h3>{AboutMyComponents[selectedTopic].title}</h3>
-        <p>{AboutMyComponents[selectedTopic].description}</p>
+        <h3>{AboutMeComponents[selectedTopic].title}</h3>
+        <p>{AboutMeComponents[selectedTopic].description}</p>
       </div>
     )
   }
 
   return (
-    <Section title="Sobre mim" id="aboutMy">
+    <Section title="Sobre mim" id="aboutMe">
       <Tabs
         buttons={
           <>
